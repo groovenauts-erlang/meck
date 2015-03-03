@@ -33,8 +33,7 @@ compile_beam(OriginalMod, Bin) ->
 %% @doc Given a cover file `File' exported by `cover:export' overwrite
 %% the module name with `Name'.
 rename_module(File, Name) ->
-    File2 = ".eunit/" ++ File,
-    NewTerms = change_cover_mod_name(read_cover_file(File2), Name),
+    NewTerms = change_cover_mod_name(read_cover_file(File), Name),
     write_terms(File, NewTerms),
     ok.
 
